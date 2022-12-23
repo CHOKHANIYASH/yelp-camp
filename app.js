@@ -39,7 +39,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static( path.join(__dirname, 'public')))
 
-// dbUrl = 'mongodb://localhost:27017/yelp-camp'
 
 
 const store = new MongoDBStore({
@@ -86,7 +85,7 @@ app.use('/campgrounds/:id/reviews',reviewRoutes)
 
 
 app.get('/',(req,res)=>{
-    res.render('home');
+    res.redirect('/campgrounds');
 })
     
 app.all('*',(req,res,next)=>{
