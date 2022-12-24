@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
 
 const env = require('../.env')
 const mongoose=require('mongoose')
@@ -22,7 +25,7 @@ mongoose.connect(dbUrl).then(() => {
             const random1000 = Math.floor(Math.random() * 1000);
             const price = Math.floor(Math.random() * 20) + 10;
             const camp = new Campground({
-                author:'636643e9d7c5f5c3a9c701b8',
+                author:'63a729fe3338d3731883a615',
                 location: `${cities[random1000].city}, ${cities[random1000].state}`,
                 title: `${sample(descriptors)} ${sample(places)}`,
                 image:'https://source.unsplash.com/collection/483251',
