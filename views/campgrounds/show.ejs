@@ -25,9 +25,6 @@
             <% } %>
         </div>
         <div class="card mb-3">
-            <!-- <% for(let img of campground.images) {%> 
-            <img src="<%= img.url%>" class="card-img-top" alt="...">
-            <% } %>  -->
             <div class="card-body">
                 <h5 class="card-title"><%= campground.title%></h5>
                 <p class="card-text"><%= campground.description%></p>
@@ -45,9 +42,6 @@
                 </form>
             </div>
             <% } %> 
-            <div class="card-footer text-muted">
-                2 days ago
-            </div>
         </div>
         
     </div>
@@ -55,10 +49,6 @@
         <% if(currentUser){ %> 
         <h2>Leave a review</h2>
         <form action="/campgrounds/<%= campground._id %>/reviews" method="POST" class="mb-3 validated-form" novalidate>
-            <!-- <div class="mb-3">
-                <label class="form-label" for="rating">Rating</label>
-                <input class="form-range" type="range" mni="1" max="5" name="review[rating]" id="rating">
-            </div> -->
                 <div class="mb-3">
                 <fieldset class="starability-basic">
                     <legend>First rating:</legend>
